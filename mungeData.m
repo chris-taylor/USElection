@@ -4,17 +4,10 @@ function newdata = mungeData(data)
 %   When there are polls from the last month, take the mean.
 %   If there is no poll in the last month, use the most recent month, or
 %   the 2008 results when no poll is available.
-
-    % Get population data
-    fname = 'population.csv';
-    fid   = fopen(fname);
-    csv   = textscan(fid,'%s %d','headerlines',1,'delimiter',',');
-    pop.n = csv{2};
     
     % Config for model. Take the mean of all polls from the last 30 days.
     dayWindow = 30;
     method    = @mean;
-    
     
     % Munge poll data
     states = unique(data.state);
@@ -24,7 +17,6 @@ function newdata = mungeData(data)
     newdata.state = cell(51,1);
     newdata.p     = zeros(51,2);
     newdata.ev    = zeros(51,1);
-    newdata.pop   = zeros(51,1);
 
     for ii = 1:length(states)
        
@@ -41,12 +33,13 @@ function newdata = mungeData(data)
         end
         
         p = bsxfun(@rdivide,[data.dem(idx) data.gop(idx)] ,(data.dem(idx)+data.gop(idx)));
-        p = method(p);
+        n = size(p,1);
+        p = method(p,1);
         
-        newdata.state{ii} = state;
-        newdata.p(ii,:)   = p;
-        newdata.ev(ii)    = data.ev(idx(1));
-        newdata.pop(ii)   = pop.n(ii);
+        newdata.state{ii}    = state;
+        newdata.p(ii,:)      = p;
+        newdata.npolls(ii,:) = n;
+        newdata.ev(ii)       = data.ev(idx(1));
          
     end
 
