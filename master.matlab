@@ -1,4 +1,4 @@
-function result = master
+function result = master()
 
     data   = readData;
     munged = mungeData(data);
