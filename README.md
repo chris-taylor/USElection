@@ -14,7 +14,7 @@ To use the model, run `master` in Matlab. Sample output (4th November 2012)
     Simulating: Wyoming
 
     Results:
-      P(Dem win) = 89.3%
-      P(GOP win) = 10.6%
-      P(Tie)     =  0.1%
+      P(Dem win) =  99.46%
+      P(GOP win) =   0.49%
+      P(Tie)     =   0.06%
 
