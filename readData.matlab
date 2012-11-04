@@ -1,4 +1,4 @@
-function data = readData
+function data = readData()
 
     filename = 'pres_polls.csv';
     
