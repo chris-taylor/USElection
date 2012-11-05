@@ -1,6 +1,10 @@
-function result = master()
+function result = master(year)
 
-    data   = readData;
+    if nargin < 1
+        year = 2012;
+    end
+
+    data   = readData(year);
     munged = mungeData(data);
     result = runModel(munged);
     
@@ -10,15 +14,21 @@ function result = master()
     fprintf('  P(Tie)     = %6.2f%%\n',100*result.pTied)
     
     % Write output file
-    fname = sprintf('USElectionForecast%s.csv',datestr(date,'yyyymmdd'));
+    fname = sprintf('forecast/USElectionForecast%s%s.csv',num2str(year),datestr(date,'mmmdd'));
     fid = fopen(fname,'w');
+    
+    fprintf(fid,'State,Winner,Confidence\n');
+    
     for ii = 1:length(result.state)
         if result.pStateDem(ii) > 0.5
             party = 'DEM';
+            conf  = 100 * result.pStateDem(ii);
         else
             party  = 'REP';
+            conf   = 100 * result.pStateGop(ii);
         end
-        fprintf(fid,'%s,%s,%f,%f\n',result.state{ii},party,result.pStateDem(ii),result.pStateGop(ii));
+        
+        fprintf(fid,'%s,%s,%.0f%%\n',result.state{ii},party,conf);
     end
     fclose(fid);
     

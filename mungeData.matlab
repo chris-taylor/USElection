@@ -9,14 +9,18 @@ function newdata = mungeData(data)
     dayWindow = 30;
     method    = @mean;
     
+    % Electoral vote data
+    ev = loadElectoralVotes;
+    
     % Munge poll data
     states = unique(data.state);
     
-    lastDay = max(data.day);
+    lastDay = max(data.datenum);
     
-    newdata.state = cell(51,1);
-    newdata.p     = zeros(51,2);
-    newdata.ev    = zeros(51,1);
+    newdata.state  = cell(51,1);
+    newdata.p      = zeros(51,2);
+    newdata.npolls = zeros(51,1);
+    newdata.ev     = zeros(51,1);
 
     for ii = 1:length(states)
        
@@ -24,7 +28,7 @@ function newdata = mungeData(data)
         
         stateIdx = strmatch(state,data.state,'exact');
         
-        lastMonthIdx = (lastDay - data.day(stateIdx)) < dayWindow;
+        lastMonthIdx = (lastDay - data.datenum(stateIdx)) < dayWindow;
         
         if ~any(lastMonthIdx)
             idx = stateIdx(1);
@@ -39,7 +43,9 @@ function newdata = mungeData(data)
         newdata.state{ii}    = state;
         newdata.p(ii,:)      = p;
         newdata.npolls(ii,:) = n;
-        newdata.ev(ii)       = data.ev(idx(1));
+        
+        idx = strmatch(state,ev.state,'exact');
+        newdata.ev(ii)       = ev.ev(idx);
          
     end
 
