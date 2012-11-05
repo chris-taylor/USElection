@@ -13,14 +13,14 @@ Delaware               DEM     100%
 Minnesota              DEM     100%
 Rhode Island           DEM     100%
 Illinois               DEM     100%
-New Mexico             DEM     99%
+New Mexico             DEM     100%
 Ohio                   DEM     99%
 Pennsylvania           DEM     99%
 Michigan               DEM     99%
 Maine                  DEM     97%
 Wisconsin              DEM     95%
 Oregon                 DEM     93%
-Nevada                 DEM     91%
+Nevada                 DEM     90%
 Iowa                   DEM     82%
 Virginia               DEM     76%
 New Hampshire          DEM     68%
@@ -33,8 +33,8 @@ Georgia                REP     93%
 Arizona                REP     93%
 Mississippi            REP     95%
 Louisiana              REP     97%
-Kentucky               REP     97%
 Kansas                 REP     97%
+Kentucky               REP     97%
 West Virginia          REP     97%
 Texas                  REP     98%
 Missouri               REP     99%
@@ -42,11 +42,11 @@ Alabama                REP     99%
 Alaska                 REP     100%
 Nebraska               REP     100%
 Montana                REP     100%
-Tennessee              REP     100%
 Indiana                REP     100%
+Tennessee              REP     100%
 Oklahoma               REP     100%
 Arkansas               REP     100%
-North Dakota           REP     100%
 Wyoming                REP     100%
 Idaho                  REP     100%
+North Dakota           REP     100%
 Utah                   REP     100%

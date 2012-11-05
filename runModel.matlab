@@ -1,6 +1,6 @@
 function results = runModel(data)
 
-    nSimulation = 1e5;  % Number of times to simulate each state
+    nSimulation  = 1e5; % Number of times to simulate each state
     nRespondents = 150; % Number of poll respondents (assumed)
     
     results.state = data.state;
