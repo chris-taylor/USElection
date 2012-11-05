@@ -35,8 +35,11 @@ function results = runModel(data)
     results.pStateDem = mean(results.dem,2);
     results.pStateGop = mean(results.gop,2);
     
-    results.pDemWin = mean(sum(results.evdem) > sum(results.evgop));
-    results.pGopWin = mean(sum(results.evgop) > sum(results.evdem));
-    results.pTied   = mean(sum(results.evgop) == sum(results.evdem));
+    results.demVotes = sum(results.evdem);
+    results.gopVotes = sum(results.evgop);
+    
+    results.pDemWin = mean(results.demVotes >  results.gopVotes);
+    results.pGopWin = mean(results.demVotes <  results.gopVotes);
+    results.pTied   = mean(results.demVotes == results.gopVotes);
 
 end

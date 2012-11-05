@@ -1,13 +1,20 @@
-function newdata = mungeData(data)
+function newdata = mungeData(data,window,method)
 %MUNGEDATA
 %
 %   When there are polls from the last month, take the mean.
 %   If there is no poll in the last month, use the most recent month, or
 %   the 2008 results when no poll is available.
     
-    % Config for model. Take the mean of all polls from the last 30 days.
-    dayWindow = 30;
-    method    = @mean;
+    % Config for model. Take the average of all polls from the last 'win' days.
+    if nargin < 2
+        window = 30;
+    end
+    if nargin < 3
+        method = 'mean';
+    end
+    if ischar(method)
+        method = str2func(method);
+    end
     
     % Electoral vote data
     ev = loadElectoralVotes;
@@ -28,7 +35,7 @@ function newdata = mungeData(data)
         
         stateIdx = strmatch(state,data.state,'exact');
         
-        lastMonthIdx = (lastDay - data.datenum(stateIdx)) < dayWindow;
+        lastMonthIdx = (lastDay - data.datenum(stateIdx)) < window;
         
         if ~any(lastMonthIdx)
             idx = stateIdx(1);
