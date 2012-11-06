@@ -11,33 +11,34 @@ function results = runModel(data)
         
         effRespondents = nRespondents * data.npolls(ii);
         
-        % Get poll averages and the covariance matrix (assume that polls
-        % are binomial). NB the covariance matrix is singular, but that's
-        % ok.
-        p = data.p(ii,:);
-        sigma = -p' * p;
-        sigma = (sigma - diag(diag(sigma)) + diag(p.*(1-p))) / effRespondents;
+        % Get poll averages for DEM and the standard error (assume that polls
+        % are binomial).
+        pdem  = data.p(ii,1);
+        sigma = sqrt( pdem.*(1-pdem) / effRespondents );
             
-        % Simulate what the proportion of voters *might* have been,
+        % Simulate what the real proportion of DEM voters *might* have been,
         % consistent with the poll numbers.
-        ps = mvnrnd(p,sigma,nSimulation);
+        ps = pdem + sigma * randn(1,nSimulation);
         
-        % Record winner/loser/tie in each simulation
-        results.dem(ii,:)   = (ps(:,1) > ps(:,2))';
-        results.gop(ii,:)   = (ps(:,2) > ps(:,1))';
+        % Record winner/loser in each simulation.
+        results.dem(ii,:)   = ps > 0.5;
+        results.gop(ii,:)   = ps < 0.5;
         
-        % Record electoral college votes in each simulation
+        % Record electoral college votes in each simulation.
         results.evdem(ii,:) = data.ev(ii) * results.dem(ii,:);
         results.evgop(ii,:) = data.ev(ii) * results.gop(ii,:);
         
     end
     
+    % Get the probability of a DEM/GOP win in each state.
     results.pStateDem = mean(results.dem,2);
     results.pStateGop = mean(results.gop,2);
     
+    % Total DEM/GOP electoral college votes in each simulation.
     results.demVotes = sum(results.evdem);
     results.gopVotes = sum(results.evgop);
     
+    % Final probability of a DEM win/GOP win/tie.
     results.pDemWin = mean(results.demVotes >  results.gopVotes);
     results.pGopWin = mean(results.demVotes <  results.gopVotes);
     results.pTied   = mean(results.demVotes == results.gopVotes);
