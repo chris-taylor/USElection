@@ -52,6 +52,7 @@ California,55,35,Feb-18,Field Poll-17
 California,60,31,Feb-09,SurveyUSA-2
 California,52,30,Feb-02,PPP-3
 California,61,37,Jan-01,Election 2008-1
+Colorado,52,46,Nov-04,PPP-2
 Colorado,48,48,Nov-04,IPSOS-3
 Colorado,46,47,Nov-01,IPSOS-3
 Colorado,49,48,Oct-31,CallFire-3
@@ -115,11 +116,13 @@ Connecticut,61,38,Jan-01,Election 2008-1
 District of Columbia,88,8,Oct-14,PPP-3
 District of Columbia,92,7,Jan-01,Election 2008-1
 Delaware,62,37,Jan-01,Election 2008-1
+Florida,47,52,Nov-04,Insider Advantage-1
+Florida,50,49,Nov-04,PPP-2
 Florida,46,46,Nov-04,IPSOS-3
 Florida,47,49,Nov-03,Zogby-3
-Florida,49,47,Nov-01,Marist Coll.-2
 Florida,45,51,Nov-01,Mason Dixon-3
 Florida,48,46,Nov-01,IPSOS-3
+Florida,49,47,Nov-01,Marist Coll.-3
 Florida,48,50,Oct-29,Pulse Opinion Research-1
 Florida,47,47,Oct-30,IPSOS-4
 Florida,48,47,Oct-29,Zogby-3
@@ -189,6 +192,7 @@ Florida,42,47,Jan-24,Suffolk U.-3
 Florida,45,45,Jan-23,Quinnipiac U.-5
 Florida,43,46,Jan-08,Quinnipiac U.-5
 Florida,51,48,Jan-01,Election 2008-1
+Georgia,54,42,Nov-01,Insider Advantage-1
 Georgia,44,52,Oct-28,SurveyUSA-4
 Georgia,43,51,Oct-12,Atlanta Journal-5
 Georgia,35,56,Sep-19,Insider Advantage-1
@@ -209,6 +213,7 @@ Illinois,55,29,Aug-23,IPSOS-7
 Illinois,51,31,Jul-22,IPSOS-7
 Illinois,56,35,Feb-06,Market Shares-5
 Illinois,62,37,Jan-01,Election 2008-1
+Indiana,43,52,Nov-01,Rasmussen-1
 Indiana,41,51,Oct-30,Howey-DePauw-3
 Indiana,42,55,Oct-28,Pharos Research Group-3
 Indiana,38,51,Oct-21,Pharos Research Group-3
@@ -220,6 +225,7 @@ Indiana,42,48,May-24,Rasmussen-2
 Indiana,40,49,Mar-27,Howey-DePauw-2
 Indiana,50,49,Jan-01,Election 2008-1
 Iowa,50,48,Nov-04,PPP-2
+Iowa,48,49,Nov-04,ARG-3
 Iowa,47,42,Nov-02,Selzer-4
 Iowa,48,49,Oct-30,Rasmussen-1
 Iowa,50,47,Oct-31,CallFire-3
@@ -273,6 +279,7 @@ Maryland,55,36,Sep-23,Gonzales Research-7
 Maryland,58,35,May-21,PPP-8
 Maryland,62,36,Jan-01,Election 2008-1
 Massachusetts,57,42,Nov-02,PPP-2
+Massachusetts,57,37,Nov-03,Princeton Survey-4
 Massachusetts,57,37,Nov-03,U. of Mass.-4
 Massachusetts,58,40,Nov-01,Western New England U.-7
 Massachusetts,63,31,Oct-28,Suffolk U.-4
@@ -342,7 +349,6 @@ Michigan,48,40,Jan-25,EPIC MRA-5
 Michigan,57,41,Jan-01,Election 2008-1
 Minnesota,53,45,Nov-03,PPP-2
 Minnesota,52,41,Nov-03,SurveyUSA-3
-Minnesota,53,44,Nov-01,PPP-2
 Minnesota,50,43,Oct-28,SurveyUSA-3
 Minnesota,47,44,Oct-25,Mason Dixon-3
 Minnesota,51,46,Oct-21,Rasmussen-1
@@ -360,6 +366,7 @@ Minnesota,51,41,Jan-22,PPP-2
 Minnesota,54,44,Jan-01,Election 2008-1
 Mississippi,43,56,Jan-01,Election 2008-1
 Missouri,45,53,Nov-03,PPP-2
+Missouri,43,50,Nov-03,SurveyUSA-7
 Missouri,41,54,Oct-25,Mason Dixon-3
 Missouri,46,52,Oct-21,PPP-3
 Missouri,43,54,Oct-17,Rasmussen-1
@@ -407,6 +414,7 @@ Nebraska,39,51,Mar-25,PPP-4
 Nebraska,35,52,Mar-05,Rasmussen-1
 Nebraska,39,51,Jan-25,PPP-4
 Nebraska,42,57,Jan-01,Election 2008-1
+Nevada,51,47,Nov-04,PPP-2
 Nevada,50,46,Oct-29,SurveyUSA-7
 Nevada,50,46,Oct-25,CallFire-3
 Nevada,50,47,Oct-24,Marist Coll.-2
@@ -434,7 +442,11 @@ Nevada,51,43,Apr-01,PPP-4
 Nevada,50,44,Mar-19,Rasmussen-1
 Nevada,53,44,Feb-01,Rasmussen-1
 Nevada,55,43,Jan-01,Election 2008-1
+New Hampshire,50,48,Nov-04,Rasmussen-1
+New Hampshire,50,46,Nov-04,New England College-2
 New Hampshire,50,48,Nov-04,PPP-2
+New Hampshire,49,49,Nov-04,ARG-3
+New Hampshire,51,48,Nov-04,U. of New Hampshire-4
 New Hampshire,48,48,Nov-02,U. of New Hampshire-3
 New Hampshire,50,44,Oct-31,New England College-3
 New Hampshire,49,47,Oct-29,Marist Coll.-2
@@ -581,9 +593,12 @@ North Dakota,40,54,Oct-05,Mason Dixon-3
 North Dakota,36,51,Jul-11,Rasmussen-2
 North Dakota,39,52,Jun-06,Mason Dixon-3
 North Dakota,45,53,Jan-01,Election 2008-1
+Ohio,49,49,Nov-04,Rasmussen-1
 Ohio,52,47,Nov-04,PPP-2
 Ohio,48,44,Nov-04,IPSOS-3
+Ohio,49,44,Nov-04,SurveyUSA-4
 Ohio,50,42,Nov-03,Zogby-3
+Ohio,50,49,Nov-04,U. of Cincinnati-5
 Ohio,49,49,Nov-01,Rasmussen-1
 Ohio,51,45,Nov-01,Marist Coll.-2
 Ohio,47,45,Nov-01,IPSOS-3
@@ -729,6 +744,7 @@ Rhode Island,54,37,Feb-22,PPP-7
 Rhode Island,63,35,Jan-01,Election 2008-1
 South Carolina,40,46,Jan-13,IPSOS-4
 South Carolina,45,54,Jan-01,Election 2008-1
+South Dakota,41,53,Nov-04,Nielson Bros.-5
 South Dakota,42,50,Oct-31,Nielson Bros.-4
 South Dakota,41,52,Oct-05,Nielson Bros.-5
 South Dakota,39,54,Sep-06,Nielson Bros.-9
@@ -748,6 +764,7 @@ Texas,43,50,Apr-22,PPP-4
 Texas,36,49,Feb-15,U. of Texas-8
 Texas,42,49,Jan-15,PPP-4
 Texas,44,55,Jan-01,Election 2008-1
+Utah,25,70,Oct-31,Mason Dixon-3
 Utah,26,69,Nov-01,Dan Jones-7
 Utah,20,71,Oct-13,Key Research-5
 Utah,26,68,Jun-21,Dan Jones-7
@@ -755,9 +772,11 @@ Utah,34,63,Jan-01,Election 2008-1
 Vermont,62,25,Aug-21,Castleton State Coll.-11
 Vermont,58,33,Feb-22,Castleton State Coll.-12
 Vermont,67,30,Jan-01,Election 2008-1
+Virginia,48,50,Nov-04,Rasmussen-1
 Virginia,51,47,Nov-04,PPP-2
 Virginia,47,46,Nov-04,IPSOS-3
 Virginia,50,44,Nov-03,Zogby-3
+Virginia,48,47,Nov-02,Marist Coll.-2
 Virginia,49,44,Nov-01,IPSOS-3
 Virginia,49,46,Oct-31,PPP-2
 Virginia,49,48,Oct-30,Pulse Opinion Research-1
