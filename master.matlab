@@ -89,7 +89,7 @@ function master(year,window,method)
     legend({'Electoral college votes','Required to win'});
     
     % If looking at 2004 or 2008 data, assess forecasts
-    if ismember(year,[2004 2008])
+    if ismember(year,[2004 2008 2012])
         assessment = compareForecast(year);
         
         fprintf('Forecast performance:\n');
