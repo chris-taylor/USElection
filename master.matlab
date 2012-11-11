@@ -1,4 +1,4 @@
-function master(year,window,method)
+function res = master(year,window,method,biasStd)
 
     if nargin < 1
         year = 2012;
@@ -11,10 +11,14 @@ function master(year,window,method)
     if nargin < 3
         method = 'median';
     end
+    
+    if nargin < 4
+        biasStd = 0.0;
+    end
 
     data   = readData(year);
     munged = mungeData(data,window,method);
-    result = runModel(munged);
+    result = runModel(munged,0.0,biasStd);
     
     fprintf('Results:\n')
     fprintf('  P(Dem win) = %6.2f%%\n',100*result.pDemWin)
@@ -57,7 +61,7 @@ function master(year,window,method)
     % Write nicely formatted output file
     fname = sprintf('forecast/USElectionForecastFormatted%s.txt',num2str(year));
     fid = fopen(fname,'w');
-    fprintf(fid,'State                  Winner  Confidence\n')
+    fprintf(fid,'State                  Winner  Confidence\n');
     [tmp idx] = sort(result.pStateGop);
     
     for ii = 1:length(result.state)
@@ -71,8 +75,6 @@ function master(year,window,method)
         fprintf(fid,'%-23s%-8s%-.0f%%\n',result.state{idx(ii)},party,conf);
     end
     fclose(fid);
-    
-    
     
     % Plot a histogram of electoral college votes
     ev = loadElectoralVotes;
@@ -90,14 +92,26 @@ function master(year,window,method)
     
     % If looking at 2004 or 2008 data, assess forecasts
     if ismember(year,[2004 2008 2012])
-        assessment = compareForecast(year);
+        
+        forecast   = loadForecast(year);
+        actual     = loadResults(year);
+        assessment = compareForecast(forecast,actual);
         
         fprintf('Forecast performance:\n');
         fprintf('  %d / 51 correctly forecast\n',assessment.nCorrect);
+        fprintf('Brier score:\n')
+        fprintf('  %.4f\n',assessment.brierScore)
+        fprintf('Negative log likelihood:\n')
+        fprintf('  %.4f\n',assessment.logLikelihood)
         fprintf('Incorrect predictions:\n');
         for ii = 1:length(assessment.wrong)
             fprintf('  %s\n',assessment.wrong{ii});
         end
+    end
+    
+    %Output
+    if nargout > 0
+        res = result;
     end
     
 end

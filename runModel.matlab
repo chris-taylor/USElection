@@ -1,7 +1,18 @@
-function results = runModel(data)
+function results = runModel(data,biasMean,biasStd,nRespondents)
 
     nSimulation  = 1e5; % Number of times to simulate each state
-    nRespondents = 150; % Number of poll respondents (assumed)
+    
+    if nargin < 2
+        biasMean = 0.0;
+    end
+    
+    if nargin < 3
+        biasStd  = 0.0;
+    end
+    
+    if nargin < 4
+        nRespondents = 150; % Number of poll respondents (assumed)
+    end
     
     results.state = data.state;
     
@@ -12,13 +23,18 @@ function results = runModel(data)
         effRespondents = nRespondents * data.npolls(ii);
         
         % Get poll averages for DEM and the standard error (assume that polls
-        % are binomial).
-        pdem  = data.p(ii,1);
+        % are binomial). Also add on a mean bias term, and a random bias
+        % in each case.
+        % The probabilities are capped to be in (0,1).
+        pdem  = data.p(ii,1) + biasMean + biasStd * randn(1,nSimulation);
+        pdem(pdem < 0) = 0;
+        pdem(pdem > 1) = 1;
+        
         sigma = sqrt( pdem.*(1-pdem) / effRespondents );
             
         % Simulate what the real proportion of DEM voters *might* have been,
         % consistent with the poll numbers.
-        ps = pdem + sigma * randn(1,nSimulation);
+        ps = pdem + sigma .* randn(1,nSimulation);
         
         % Record winner/loser in each simulation.
         results.dem(ii,:)   = ps > 0.5;
@@ -42,5 +58,16 @@ function results = runModel(data)
     results.pDemWin = mean(results.demVotes >  results.gopVotes);
     results.pGopWin = mean(results.demVotes <  results.gopVotes);
     results.pTied   = mean(results.demVotes == results.gopVotes);
+    
+    % Forecasts and confidence
+    for ii = 1:length(results.state)
+        if results.pStateDem(ii) > 0.5
+            results.prediction{ii} = 'DEM';
+            results.confidence(ii) = results.pStateDem(ii);
+        else
+            results.prediction{ii} = 'REP';
+            results.confidence(ii) = results.pStateGop(ii);
+        end
+    end
 
 end

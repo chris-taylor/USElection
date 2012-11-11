@@ -1,29 +1,38 @@
-function data = compareForecast(year)
+function data = compareForecast(forecast,result)
 
-    forecast = loadForecast(year);
-    result   = loadResults(year);
-   
     nCorrect = 0;
     right    = {};
     wrong    = {};
+    
+    brierScore    = 0;
+    logLikelihood = 0;
     
     for ii = 1:length(result.state)
        
         idx = strmatch(result.state{ii},forecast.state,'exact');
         
-        prediction = forecast.result{idx};
+        prediction = forecast.prediction{idx};
+        confidence = forecast.confidence(idx);
         
         if strcmp(prediction,result.result{ii})
-            nCorrect = nCorrect + 1;
-            right{end+1} = result.state{ii};
+            nCorrect      = nCorrect + 1;
+            brierScore    = brierScore + (1 - confidence)^2;
+            logLikelihood = logLikelihood - log(confidence);
+            right{end+1}  = result.state{ii};
         else
-            wrong{end+1} = result.state{ii};
+            brierScore    = brierScore + confidence^2;
+            logLikelihood = logLikelihood - log(1 - confidence);
+            wrong{end+1}  = result.state{ii};
         end
         
     end
     
-    data.nCorrect = nCorrect;
-    data.right    = right;
-    data.wrong    = wrong;
+    brierScore = brierScore / length(result.state);
+    
+    data.nCorrect      = nCorrect;
+    data.brierScore    = brierScore;
+    data.logLikelihood = logLikelihood;
+    data.right         = right;
+    data.wrong         = wrong;
     
 end

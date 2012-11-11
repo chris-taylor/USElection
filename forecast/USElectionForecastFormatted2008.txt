@@ -3,50 +3,50 @@ California             DEM     100%
 District of Columbia   DEM     100%
 Hawaii                 DEM     100%
 Illinois               DEM     100%
-Iowa                   DEM     100%
 Massachusetts          DEM     100%
-Michigan               DEM     100%
-Minnesota              DEM     100%
 New Hampshire          DEM     100%
 New Jersey             DEM     100%
 New York               DEM     100%
-Oregon                 DEM     100%
 Pennsylvania           DEM     100%
-Washington             DEM     100%
 Wisconsin              DEM     100%
-Connecticut            DEM     100%
-Virginia               DEM     100%
+Michigan               DEM     100%
+Oregon                 DEM     100%
+Washington             DEM     100%
 Delaware               DEM     100%
-Rhode Island           DEM     100%
+Connecticut            DEM     100%
+Iowa                   DEM     100%
+Minnesota              DEM     100%
 Maine                  DEM     100%
-Ohio                   DEM     100%
-Colorado               DEM     100%
+Rhode Island           DEM     100%
 Vermont                DEM     100%
 Maryland               DEM     100%
+Virginia               DEM     100%
+Colorado               DEM     99%
 New Mexico             DEM     99%
-Florida                DEM     99%
-Nevada                 DEM     98%
-North Carolina         DEM     73%
+Ohio                   DEM     98%
+Nevada                 DEM     96%
+Florida                DEM     90%
+North Carolina         DEM     68%
+Missouri               DEM     65%
 North Dakota           DEM     61%
-Missouri               REP     50%
-Indiana                REP     81%
-Montana                REP     87%
-Arizona                REP     92%
-South Dakota           REP     93%
-Tennessee              REP     94%
-Georgia                REP     98%
-Arkansas               REP     98%
-West Virginia          REP     99%
+Indiana                REP     65%
+Montana                REP     72%
+Arizona                REP     91%
+West Virginia          REP     92%
+South Dakota           REP     92%
+Tennessee              REP     93%
+Georgia                REP     94%
+Louisiana              REP     99%
+Arkansas               REP     99%
 Nebraska               REP     99%
-Texas                  REP     100%
-Kansas                 REP     100%
-Louisiana              REP     100%
-South Carolina         REP     100%
-Kentucky               REP     100%
 Mississippi            REP     100%
+Texas                  REP     100%
+Kentucky               REP     100%
+Kansas                 REP     100%
+South Carolina         REP     100%
 Alaska                 REP     100%
+Wyoming                REP     100%
 Alabama                REP     100%
 Idaho                  REP     100%
 Oklahoma               REP     100%
 Utah                   REP     100%
-Wyoming                REP     100%
