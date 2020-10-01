@@ -19,3 +19,11 @@ To use the model, run `master` in Matlab. Sample output (4th November 2012)
       P(GOP win) =   0.49%
       P(Tie)     =   0.06%
 
+### Update (2020/10/01)
+
+I no longer endorse the modelling approach taken here! In particular the model does not allow for the following important effects -
+
+- Drift in polling numbers in the run-up to the election
+- Correlated errors in polls
+
+The combination of these two means that the model makes forecasts which are *much* too confident, and they should not be relied on for anything serious at all.
